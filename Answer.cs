@@ -2,7 +2,7 @@
 {
     public class Answer
     {
-        Answer(int AnswerId, string AnswerText) 
+        public Answer(int AnswerId, string AnswerText) 
         {
             this.AnswerId = AnswerId;
             this.AnswerText = AnswerText;
