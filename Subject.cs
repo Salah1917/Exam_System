@@ -34,6 +34,10 @@
         public void CreatePracticalExam()
         {
             PracticalExam practicalExam = new PracticalExam(60, 5);
+            practicalExam.createExam();
+            practicalExam.showExam();
+            practicalExam.showResults();
+
         }
         public void CreateFinalExam()
         {

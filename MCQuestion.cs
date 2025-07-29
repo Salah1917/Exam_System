@@ -6,9 +6,11 @@ namespace Exam_Project
     {
 
         public MCQuestion(string Header, string Body, int Mark) : base(Header, Body, Mark) { }
+        public string correctAnswerText { get; set; }
         public MCQuestion() { }
 
-        List<Answer> answers = new List<Answer>();
+
+        public List<Answer> answers = new List<Answer>();
 
         public int correctAnswer { get; set; }
         public override int CheckAnswer(int AnswerGiven)

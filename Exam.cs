@@ -9,9 +9,10 @@
         }
         public int TimeOfExam { get; set; }
         public int QuestionCount { get; set; }
-      
-        public abstract int gradeExam();
-        public abstract int showResults();
+        public int Mark { get; set; }
+
+        public abstract void createExam();
+        public abstract void showResults();
 
     }
 }

@@ -3,40 +3,42 @@
     public class PracticalExam : Exam
     {
 
-        public PracticalExam(int _TimeOfExam, int _QuestionCount) : base(_TimeOfExam, _QuestionCount)
+        public PracticalExam(int _TimeOfExam, int _QuestionCount) : base(_TimeOfExam, _QuestionCount){}
+        //public PracticalExam() { }
+
+        List<MCQuestion> mCQuestions = new List<MCQuestion>();
+
+        public override void showResults()
         {
-            MCQuestion[] mCQuestions = new MCQuestion[_QuestionCount];
-            for(int i = 0; i < _QuestionCount; i++)
+            int i = 1;
+            foreach (MCQuestion question in mCQuestions)
             {
-                mCQuestions[i] = createMCQuestion();
+                Console.WriteLine($"Correct answer for question #{i}: {question.answers[question.correctAnswer - 1].AnswerText}");
+                i++;
             }
-            this.mCQuestions = mCQuestions;
-            //PracticalExam practicalExam = new PracticalExam(mCQuestions, _TimeOfExam,  _QuestionCount);
-
-        }
-        //public PracticalExam(MCQuestion[] mCQuestions, int _TimeOfExam, int _QuestionCount) : base(_TimeOfExam, _QuestionCount)//{}
-
-        MCQuestion[] mCQuestions { set; get; }
-        
-        public override int gradeExam()
-        {
-            throw new NotImplementedException();
         }
 
-        public override int showResults()
+        public override void createExam()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("How many questions do you want?");
+            int count = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < count; i++)
+            {
+                MCQuestion mCQuestion = new MCQuestion();
+                mCQuestion.createQuestion();
+                
+                mCQuestions.Add(mCQuestion);
+            }
         }
-        public MCQuestion createMCQuestion()
+
+        public void showExam()
         {
-            Console.WriteLine("Enter the question header:");
-            string questionHeader = Console.ReadLine();
-            Console.WriteLine("Enter the question body:");
-            string questionBody = Console.ReadLine();
-            Console.WriteLine("Enter the question mark:");
-            int questionMark = int.Parse(Console.ReadLine());
-            MCQuestion question = new MCQuestion(questionHeader, questionBody, questionMark);
-            return question;
+            foreach (MCQuestion question in mCQuestions)
+            {
+                question.displayQuestion();
+                int answerGiven = int.Parse(Console.ReadLine());
+            }
         }
     }
 }

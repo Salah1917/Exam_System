@@ -6,15 +6,21 @@
         {
             this.questions = questions;
         }
+        
 
         Question[] questions { set; get; }
+
+        public override void createExam()
+        {
+            throw new NotImplementedException();
+        }
 
         public override int gradeExam()
         {
             throw new NotImplementedException();
         }
 
-        public override int showResults()
+        public override void showResults()
         {
             throw new NotImplementedException();
         }

@@ -1,17 +1,17 @@
 ﻿using Exam_Project;
-//Subject s = new Subject(1, "english");
-//s.CreateExam();
+Subject s = new Subject(1, "english");
+s.CreateExam();
 
 //ToFQuestion toFQuestion = new ToFQuestion();
 
 //toFQuestion.createQuestion();
 //toFQuestion.displayQuestion();
 //int ans = int.Parse(Console.ReadLine());
-//Console.WriteLine( toFQuestion.CheckAnswer(ans));
+//Console.WriteLine(toFQuestion.CheckAnswer(ans));
 
-MCQuestion mcQuestion = new MCQuestion();
+//MCQuestion mcQuestion = new MCQuestion();
 
-mcQuestion.createQuestion();
-mcQuestion.displayQuestion();
-int ans = int.Parse(Console.ReadLine());
-Console.WriteLine(mcQuestion.CheckAnswer(ans));
+//mcQuestion.createQuestion();
+//mcQuestion.displayQuestion();
+//int ans = int.Parse(Console.ReadLine());
+//Console.WriteLine(mcQuestion.CheckAnswer(ans));

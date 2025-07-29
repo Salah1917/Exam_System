@@ -13,7 +13,7 @@
                 return Mark;
             else return 0;
         }
-
+        
         public override void displayQuestion()
         {
             Console.WriteLine(Header);
