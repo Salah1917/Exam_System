@@ -6,7 +6,7 @@
         public int SubjectId { get; set; }
         public string Name { get; set; }
 
-        public Subject(int SubjectId, string Name) 
+        public Subject(int SubjectId, string Name)
         {
             this.SubjectId = SubjectId;
             this.Name = Name;
@@ -41,7 +41,11 @@
         }
         public void CreateFinalExam()
         {
-
+            FinalExam finalExam = new FinalExam(60, 5);
+            finalExam.createExam();
+            finalExam.showExam();
+            finalExam.gradeExam();
+            finalExam.showResults();
         }
     }
 }
